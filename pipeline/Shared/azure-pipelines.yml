@@ -14,16 +14,19 @@ resources:
 stages:
 
 # Unit Tests
-- template: Stages/unit.yml
+#- template: Stages/unit.yml
 
 # Integration Tests
-- template: Stages/integration.yml
+#- template: Stages/integration.yml
 
 # Plan
-- template: Stages/plan.yml
+#- template: Stages/plan.yml
+
+# Build
+- template: Stages/build.yml
 
 # Auto Apply
-- template: Stages/auto_apply.yml
+#- template: Stages/auto_apply.yml
 
 # Apply
-- template: Stages/apply.yml
+#- template: Stages/apply.yml
