@@ -1,6 +1,7 @@
 jobs:
 - deployment: Deploy
   continueOnError: true
+  timeoutInMinutes: 0
   environment: $(Environment)
   strategy:
     runOnce:
