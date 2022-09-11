@@ -2,7 +2,7 @@ stages:
 - stage: Build
   pool:
     vmImage: 'ubuntu-latest'
-  dependsOn: Plan
+  #dependsOn: Plan
   condition: and(not(failed()), not(canceled()))
   jobs:
 
