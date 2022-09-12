@@ -9,7 +9,7 @@ stages:
   # Build Linux
   - template: ../Jobs/build.yml
     parameters:
-      imageType: '${{ variables.ImageType-Linux }}'
+      imageType: ${{ parameters ['ImageType-Linux'] }}
       location: '${{ variables.ImageLocation }}'
   
   # Build Windows
