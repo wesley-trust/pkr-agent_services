@@ -1,6 +1,6 @@
 jobs:
-- deployment: Deploy
-  continueOnError: true
+- deployment: Deploy-${{ parameters.imageType }}
+  continueOnError: false
   timeoutInMinutes: 0
   environment: $(Environment)
   strategy:
@@ -18,3 +18,6 @@ jobs:
 
         # Run steps
         - template: ./Steps/runnerimages/build.yml@tfpipeline-shared
+          parameters:
+            imageType: '${{ parameters.imageType }}'
+            location: '${{ parameters.location }}'
