@@ -9,11 +9,13 @@ stages:
   # Build Linux
   - template: ../Jobs/build.yml
     parameters:
-      imageType: ${{ parameters ['ImageType-Linux'] }} # Index syntax must be used when variable contains a '-'
+      #imageType: ${{ parameters ['ImageType-Linux'] }} # Index syntax must be used when variable contains a '-'
+      imageType: '${{ variables.ImageType_Linux }}'
       location: '${{ variables.ImageLocation }}'
   
   # Build Windows
   - template: ../Jobs/build.yml
     parameters:
-      imageType: ${{ parameters ['ImageType-Windows'] }} # Index syntax must be used when variable contains a '-'
+      #imageType: ${{ parameters ['ImageType-Windows'] }} # Index syntax must be used when variable contains a '-'
+      imageType: '${{ variables.ImageType_Windows }}'
       location: '${{ variables.ImageLocation }}'
