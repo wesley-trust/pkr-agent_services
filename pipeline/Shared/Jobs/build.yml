@@ -1,5 +1,5 @@
 jobs:
-- deployment: Build_${{ parameters.imageType }}
+- deployment: ${{ parameters.imageType }}
   continueOnError: false
   timeoutInMinutes: 0
   environment: $(Environment)
