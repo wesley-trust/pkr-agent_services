@@ -7,15 +7,7 @@ stages:
   jobs:
 
   # Build Linux
-  - template: ../Jobs/build.yml
-    parameters:
-      imageType: ${{ variables ['ImageType_Linux'] }} # Index syntax must be used when variable contains a '-'
-      #imageType: '${{ variables.ImageType_Linux }}'
-      location: '${{ variables.ImageLocation }}'
+  - template: ../Jobs/build_linux.yml
   
   # Build Windows
-  - template: ../Jobs/build.yml
-    parameters:
-      imageType: ${{ variables ['ImageType_Windows'] }} # Index syntax must be used when variable contains a '-'
-      #imageType: '${{ variables.ImageType_Windows }}'
-      location: '${{ variables.ImageLocation }}'
+  - template: ../Jobs/build_windows.yml

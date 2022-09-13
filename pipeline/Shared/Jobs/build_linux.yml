@@ -1,0 +1,23 @@
+jobs:
+- deployment: Build_Linux
+  continueOnError: false
+  timeoutInMinutes: 0
+  environment: $(Environment)
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+      
+        # Checkout shared steps
+        - checkout: 'tfpipeline-shared'
+          displayName: 'Checkout shared Pipeline steps'
+          path: 's/pipeline/Shared/'
+
+        # Run common steps
+        - template: ./Steps/common.yml@tfpipeline-shared
+
+        # Run steps
+        - template: ./Steps/runnerimages/build.yml@tfpipeline-shared
+          parameters:
+            imageType: $(ImageType_Linux)
+            location: $(ImageLocation)

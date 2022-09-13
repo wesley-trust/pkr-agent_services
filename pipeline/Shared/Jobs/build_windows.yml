@@ -1,5 +1,5 @@
 jobs:
-- deployment: '${{ parameters.imageType }}'
+- deployment: Build_Windows
   continueOnError: false
   timeoutInMinutes: 0
   environment: $(Environment)
@@ -19,5 +19,5 @@ jobs:
         # Run steps
         - template: ./Steps/runnerimages/build.yml@tfpipeline-shared
           parameters:
-            imageType: '${{ parameters.imageType }}'
-            location: '${{ parameters.location }}'
+            imageType: $(ImageType_Windows)
+            location: $(ImageLocation)
