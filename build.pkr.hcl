@@ -1,4 +1,0 @@
-# Packer builds
-build {
-
-}
