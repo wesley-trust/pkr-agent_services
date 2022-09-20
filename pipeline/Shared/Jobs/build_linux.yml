@@ -1,5 +1,5 @@
 jobs:
-- deployment: Build_Linux
+- deployment: Linux
   continueOnError: false
   timeoutInMinutes: 0
   environment: $(Environment)
@@ -20,4 +20,6 @@ jobs:
         - template: ./Steps/runnerimages/build.yml@tfpipeline-shared
           parameters:
             imageType: $(ImageType_Linux)
+            platform: 'Linux'
             location: $(ImageLocation)
+            imageResourceGroupName: $(ImageResourceGroupName_Linux)
