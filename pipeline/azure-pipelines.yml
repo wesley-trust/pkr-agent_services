@@ -17,5 +17,14 @@ pr:
     exclude:
     - README.md
 
+# Execute on a schedule (measure drift from desired state)
+schedules:
+- cron: "0 12 * * 0"
+  displayName: 'Run weekly on Sundays'
+  branches:
+    include:
+    - main
+  always: true
+
 extends:
   template: ./Shared/azure-pipelines.yml
